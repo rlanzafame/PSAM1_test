@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1.2.2 Tulip fields &#8212; Probability and statistics applications for MUDE</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_excedance.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Probability and statistics applications for MUDE</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../docs/index.html">
+                    Probability and statistics applications for Modelling, Uncertainty, Data for Engineers (MUDE)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Section 1. General probability concepts
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_Must_know.html">
+   1. Must-know probability concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_1_Event_and_sample_space.html">
+   1.1.1 Event and sample space
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_2_Mutually_exclusive_events.html">
+   1.1.2 Mutually exclusive events
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_3_Collectively_exhaustive_events.html">
+   1.1.3 Collectively exhaustive events
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_4_Mutually_exclusive_and_Collectively_exhaustive_events.html">
+   1.1.4 Mutually exclusive and Collectively exhaustive events
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_5_Non_Binary_events.html">
+   1.1.5 Non Binary events
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_6_Intersection_and_Union.html">
+   1.1.6 Intersection (AND) and Union (OR)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_7_Axioms.html">
+   1.1.7 Axioms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_8_Independence.html">
+   1.1.8 Independence
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Total_Probability_Theorem.html">
+   Total Probability Theorem
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Section 2. Discrete random variables
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_02/02_01_02_Student_population.html">
+   Bernoulli distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_02/02_02_02_Flood_Hazard.html">
+   Binomial distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_02/02_03_02_Water_treatment.html">
+   Geometric distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_02/02_04_02_Pump%20station.html">
+   Homogeneous Poisson distribution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Section 3. Continuous random variables
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_03/03_01_02_Waiting_time.html">
+   Uniform distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_03/03_02_02_Dam_construction.html">
+   Exponential distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../section_03/03_03_02_Water_content.html">
+   Normal Distribution
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/sections/section_01/1_2_2_Tulip_fields.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsections/section_01/1_2_2_Tulip_fields.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/sections/section_01/1_2_2_Tulip_fields.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1.2.2 Tulip fields</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tulip-fields">
+<h1>1.2.2 Tulip fields<a class="headerlink" href="#tulip-fields" title="Permalink to this headline">#</a></h1>
+<p><img src="https://raw.githubusercontent.com/mike-mendoza/-PSAM1_test/main/images/tulip_field.jpg
+" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="210" height="130" /></p>
+<p>Tulip fields are one of the major touristic attractions in an area in South Holland, as well as an important source of income. Thus, the Public Authority in the area wants to know how vulnerable those fields are. Would you help them calculate the probability of the tulips being damaged in a given year, <span class="math notranslate nohighlight">\( P(A)\)</span>? Fortunately, you have already been provided historic data from which you can derive probabilities of bad events happening, <span class="math notranslate nohighlight">\(P(B_i)\)</span>, as well as the probability that such an event leads to damage, <span class="math notranslate nohighlight">\(P(A|B_i)\)</span>, which are summarized below.</p>
+<p>First, there may be a regional drought with a probability <span class="math notranslate nohighlight">\( P(B_1)=0.05\)</span> or a pipe in the supply system may break with a probability <span class="math notranslate nohighlight">\(P(B_2)=0.10\)</span>. There is a chance of <span class="math notranslate nohighlight">\(P(A|B_1)=0.65\)</span> and <span class="math notranslate nohighlight">\(P(A|B_2)=0.55\)</span> that tulips won’t grow if the regional drought or the pipe breakage happens, respectively.</p>
+<p>There may also be a human error in the operation of the water supply system, <span class="math notranslate nohighlight">\(P(B_3)=0.03\)</span>, which may make tulips be too dry or too wet and results in rotten tulips with a probability <span class="math notranslate nohighlight">\(P(A|B_3)=0.90\)</span>.</p>
+<p>Another possibility is that the stored water to ensure the supply may get polluted, <span class="math notranslate nohighlight">\(P(B_4)=0.05\)</span>, leading to a lack of water for the tulips with chance <span class="math notranslate nohighlight">\(P(A|B_4)=0.70\)</span>.</p>
+<p>Also, catastrophes can happen! There may be a plague or a fire that occurs with probabilities <span class="math notranslate nohighlight">\(P(B_5)=0.03\)</span> and <span class="math notranslate nohighlight">\(P(B_6)=0.05\)</span>, respectively. Those can lead to damage in the tulips field with probabilities <span class="math notranslate nohighlight">\(P(A|B_5)=0.80\)</span> and <span class="math notranslate nohighlight">\(P(A|B_6)=0.90\)</span>.</p>
+<p>Find a summary below.</p>
+<p><img src="https://raw.githubusercontent.com/mike-mendoza/-PSAM1_test/main/images/Tulip_T1.png
+" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="300" height="170" /></p>
+<hr class="docutils" />
+<p><strong>1. Assuming that the described events are independent, mutually exclusive, and collectively exhaustive, apply the Total Probability Theorem to calculate the probability of tulips being damaged one year, P(A).</strong></p>
+<p>You can write out the total probability rule by hand, but often it is useful to keep track of all the individual events in a table:</p>
+<p><img src="https://raw.githubusercontent.com/mike-mendoza/-PSAM1_test/main/images/Tulip_T2.png
+" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="330" height="170" /></p>
+<p>Therefore the probability of tulips being damaged one year is <strong>0.219</strong></p>
+<hr class="docutils" />
+<p><strong>2. Considering the values in the table bellow, which of the following actions should the Public Authority take first?</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a). Improve the maintenance of the pipes in the supply system
+b). Further automate the operation to prevent human errors
+c). Improve safety protocols to prevent fire 
+</pre></div>
+</div>
+<p><img src="https://raw.githubusercontent.com/mike-mendoza/-PSAM1_test/main/images/Tulip_T3.png
+" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="350" height="130" /></p>
+<p>By looking at the values in the table we can say that the answer is “a) Improve the maintenance of the pipes in the supply system.”</p>
+<p>This is because the cause which contributes the most to the damages in the fields is the pipe breakage in the supply system. Thus, <strong>improving their maintenance</strong> may be one way to reduce <span class="math notranslate nohighlight">\(P(B_2)\)</span>. We could also try to reduce the value of  <span class="math notranslate nohighlight">\(P(A|B_2)\)</span>. Since this value is conditional on broken pipes, it obviously is a function of what happens at the tulip farm after the pipe breaks, for example, a leaky pipe detection system, or a backup water delivery system. If we can address those parts of the entire tulip growing system we can effectively reduce the overall probability of tulip damage.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./sections\section_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
